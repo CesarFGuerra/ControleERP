@@ -12,23 +12,24 @@ public class Item implements Serializable {
 	
 	@Id
 	private String itemName;
-	private Order itemOrder;
+	private Family itemFamily;
 	
 	public Item() {
 	}
 
-	public Item(String itemName, Order itemOrder) {
+	public Item(String itemName, Family itemFamily) {
 		super();
 		this.itemName = itemName;
-		this.itemOrder = itemOrder;
+		this.itemFamily = itemFamily;
+		
 	}
 
 	public String getItemName() {
 		return itemName;
 	}
 
-	public Order getItemOrder() {
-		return itemOrder;
+	public Family getItemFamily() {
+		return itemFamily;
 	}
 
 	@Override

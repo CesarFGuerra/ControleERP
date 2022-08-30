@@ -2,28 +2,35 @@ package com.controladorERP.entities;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class OrderStatus implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	private Item listItems;
+	@Id
+	private Order itemOrder;
+	private Item item;
 	private Integer quantity;
 	private Double price;
 	
 	public OrderStatus() {
 	}
 
-	public OrderStatus(Order order, Item listItems, Integer quantity, Double price) {
+	public OrderStatus(Order itemOrder, Item item, Integer quantity, Double price) {
 		super();
-		this.listItems = listItems;
+		this.itemOrder = itemOrder;
+		this.item = item;
 		this.quantity = quantity;
 		this.price = price;
 	}
 	
-	public Item getListItems() {
-		return listItems;
+	public Item getItems() {
+		return item;
 	}
-	public void setListItems(Item listItems) {
-		this.listItems = listItems;
+	public void setListItems(Item item) {
+		this.item = item;
 	}
 	public Integer getQuantity() {
 		return quantity;
@@ -37,6 +44,15 @@ public class OrderStatus implements Serializable {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+
+	public Order getItemOrder() {
+		return itemOrder;
+	}
+
+	public void setItemOrder(Order itemOrder) {
+		this.itemOrder = itemOrder;
+	}
+	
 	
 	
 	
